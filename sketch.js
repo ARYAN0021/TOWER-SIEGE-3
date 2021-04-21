@@ -128,11 +128,11 @@ async function getBackgroundImg(){
 
   if(hour>=06 && hour<=19){
 
-     bg = "l.jpg";
+   var bg = "l.jpg";
 
   }
   else{
-      bg = "s.jpg";
+     var bg = "s.jpg";
      
   }
 
