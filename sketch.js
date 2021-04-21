@@ -4,7 +4,8 @@ const Bodies=Matter.Bodies;
 const Constraint=Matter.Constraint;
 
 var engine,world,floor,floor2,glass;
-var bg="l.jpg"
+var bg="l.jpg";
+
 var waiterImage;
 var backgroundImg,sling;
 var score = 0;
@@ -129,11 +130,11 @@ async function getBackgroundImg(){
 
   if(hour>=06 && hour<=19){
 
-   var bg = "l.jpg";
+  bg = "l.jpg";
 
   }
   else{
-     var bg = "s.jpg";
+      bg = "s.jpg";
      
   }
 
