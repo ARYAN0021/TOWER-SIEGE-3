@@ -2,15 +2,15 @@ const Engine=Matter.Engine;
 const World=Matter.World;
 const Bodies=Matter.Bodies;
 const Constraint=Matter.Constraint;
-
-var engine,world,floor,floor2,glass;
-var bg="l.jpg";
-
 var waiterImage;
 var backgroundImg,sling;
 var score = 0;
+var engine,world,floor,floor2,glass;
+
+
+var bg= "l.jpg"
 function preload(){
-  getBackgroundImg();
+  getBackgroundImage();
   waiterImage=loadImage("waiter.png");
 }
 function setup() {
@@ -57,9 +57,9 @@ sling=new SlingShot(ball.body,{x:200,y:200});
 function draw() {
 
  
-  if(backgroundImg)
-        background(backgroundImg);
-    
+  if(backgroundImg){
+        background(backgroundImg)
+  }
  
 
 
@@ -120,25 +120,19 @@ function keyPressed(){
      sling.attach(ball.body);
   }
 }
-async function getBackgroundImg(){
-  var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
-  var responseJSON = await response.json();
-
-  var datetime = responseJSON.datetime;
-  var hour = datetime.slice(11,13);
-  console.log(hour);
-
-  if(hour>=06 && hour<=19){
-
-  bg = "l.jpg";
-
+async function getBackgroundImage(){
+    
+  var response =  await fetch(" http://worldtimeapi.org/api/timezone/Australia/Sydney");
+  var JSONresponse = await response.json();
+  var dateTime = JSONresponse.datetime;
+  var hour = dateTime.slice(11,13);
+  console.log(hour)
+  if(hour>=06 && hour<19){
+      bg = "l.jpg"
   }
-  else{
-      bg = "s.jpg";
-     
+  else
+  {
+      bg = "s.jpg"
   }
-
   backgroundImg = loadImage(bg);
-  console.log(backgroundImg);
-  
 }
