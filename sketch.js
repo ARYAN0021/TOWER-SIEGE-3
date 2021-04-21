@@ -4,7 +4,8 @@ const Bodies=Matter.Bodies;
 const Constraint=Matter.Constraint;
 
 var engine,world,floor,floor2,glass;
-var bg,waiterImage;
+var bg="l.jpg"
+var waiterImage;
 var backgroundImg,sling;
 var score = 0;
 function preload(){
